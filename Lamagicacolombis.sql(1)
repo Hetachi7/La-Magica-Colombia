@@ -1,0 +1,140 @@
+-- phpMyAdmin SQL Dump
+-- version 5.2.0
+-- https://www.phpmyadmin.net/
+--
+-- Servidor: 123.0.0.1
+-- Tiempo de generación: 06-06-2023 a las 10:45:47
+-- Versión del servidor: 10.4.24-MariaDB
+-- Versión de PHP: 7.4.29
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+
+
+CREATE TABLE `Usuarios` (
+  `idUsuarios` int(10) NOT NULL,
+  `email` varchar(100) NOT NULL,
+  `nombre` varchar(100) NOT NULL,
+  `Nombreusuario` varchar (100) NOT NULL,
+  `contraseña` varchar (100) NOT NULL,
+  `Telefono` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+
+
+CREATE TABLE `Departamento` (
+  `idDepartamento` int(11) NOT NULL,
+  `Idhistoria` int(11) NOT NULL,
+  `Nombredepartamento` varchar(100) NOT NULL,
+  `nombreHisotria` varchar (100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+
+
+CREATE TABLE `Hisotrias` (
+  `Idhistoria` int(11) NOT NULL,
+  `Nombredepartamento` varchar (100) NOT NULL,
+  `idDepartamento` int (11) NOT NULL,
+  `Genero` varchar(11) NOT NULL,
+  `idGenero` int(11) NOT NULL,
+  `nombreHistoria` varchar (100) NOT NULL,
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+
+
+CREATE TABLE `SUBIR_HISTORIA` (
+  `idhistoria` int(11) NOT NULL,
+  `archivo_texto` varchar(100) NOT NULL,
+  `Nombredepartamento` varchar (100) NOT NULL,
+  `idDepartamento` int (11) NOT NULL,
+  `nombreHistoria` varchar (100) NOT NULL,
+  `contraseña` varchar (100) NOT NULL,
+  `email` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+
+
+
+
+
+
+CREATE TABLE `mapa` (
+  `idDepartamento` int (11) NOT NULL,
+  `idhistoria` int(11) NOT NULL,
+  `nombreHistoria` varchar (100) NOT NULL,
+  `Nombredepartamento` varchar (100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+
+
+
+ALTER TABLE `Usuarios`
+  ADD PRIMARY KEY (`idUsuarios`);
+
+
+ALTER TABLE `Departamento`
+  ADD PRIMARY KEY (`idDepartamento`),
+  ADD KEY `idhistoria` (`idhistoria`);
+
+
+ALTER TABLE `Hisotrias`
+  ADD PRIMARY KEY (`idhistorias`),
+  ADD KEY `idDepartamento` (`idDepartamento`);
+
+
+ALTER TABLE `SUBIR_HISTORIA`
+  ADD PRIMARY KEY (`idhistoria`);
+  ADD KEY `idDepartamento` (`idDepartamento`);
+
+ALTER TABLE `mapa`
+  ADD PRIMARY KEY (`idDepartamento`),
+  ADD KEY `idhistoria` (`idhistoria`),
+  ADD KEY `idDepartamento` (`idDepartamento`);
+
+
+
+ALTER TABLE `Historia`
+  MODIFY `idHistoria` int(11) NOT NULL AUTO_INCREMENT;
+
+
+ALTER TABLE `Usuarios`
+  MODIFY `idUsuarios` int(11) NOT NULL AUTO_INCREMENT;
+
+
+ALTER TABLE `Dpartamento`
+  MODIFY `idDepartamento` int(11) NOT NULL AUTO_INCREMENT;
+
+
+
+ALTER TABLE `Departamento`
+  ADD CONSTRAINT `Departamento` FOREIGN KEY (`idhistoria`) REFERENCES `Historia` (`idhistoria`);
+
+
+
+ALTER TABLE `Historia`
+  ADD CONSTRAINT `idDepartamento` FOREIGN KEY (`idDepartamento`) REFERENCES `Deparatamento` (`idDepartamento`),
+  
+
+ALTER TABLE `Subir_historia`
+  ADD CONSTRAINT `idDepartamento` FOREIGN KEY (`idDepartamento`) REFERENCES `Depatamento` (`idDepartamento`),
+  ADD CONSTRAINT `idhistoria` FOREIGN KEY (`idhistoria`) REFERENCES `HISTORIA` (`idhistoria`);
+
+
+ALTER TABLE `mapa`
+  ADD CONSTRAINT `idhistoria` FOREIGN KEY (`idhistoria`) REFERENCES `historia` (`idhistoria`),
+  ADD CONSTRAINT `idDepartamento` FOREIGN KEY (`idDepartamento`) REFERENCES `Departamento` (`idDepartamento`);
+
+
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
