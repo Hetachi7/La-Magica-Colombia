@@ -1,0 +1,114 @@
+body{
+    font-family: sans-serif;
+    margin: 0;
+    background-color: black;
+    
+}
+
+a{
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+}
+
+header{
+    display: flex;
+    justify-content: space-between;
+    height: 100px;
+    background-color: rgb(0, 0, 0);
+    align-items: center;
+    padding: 10px;
+    margin-right: 100px;
+    margin-left: 100px;
+    
+
+}
+.logo{
+    display: flex;
+    align-items: center;
+}
+.logo img{
+    height: 100px;
+    margin-right: 10px;
+}
+.logo h2{
+    font-size: 25px;
+}
+nav a{
+    font-weight: 600px;
+    padding-right: 20px;
+    font-size: 20px;
+}
+nav a:hover{
+    color: rgb(236, 30, 30);
+}
+
+/*audio*/
+.audioo{
+    width: 300px;
+    height: 20px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.audioo h2{
+    font-size: 30pxpx;
+    color:white;
+    text-align: center;
+}
+.audioo audio{
+    border: 1px solid red;
+    box-shadow: 0px 1px 10px rgba(255, 0, 0, 0.453);
+    
+}
+.audioo audio:hover{
+    box-shadow: 5px 5px 16px rgba(255, 0, 0, 0.453);
+    transform: scaleY(1.05);
+}
+
+/*leyenda*/
+.leyenda{
+   width: 800px;
+   height: 100%;
+   color: black;
+   margin-left: auto;
+   margin-right: auto;
+   text-align: center;
+   padding: 100px;
+   line-height: 2;
+   margin-top: 200px;
+   margin-bottom: 200px;
+   background-image: url(../img/hoja.png);
+   background-repeat: no-repeat;
+   background-size: 1000px 1250px;
+   background-position: center;
+   
+}
+.leyenda h1{
+font-size: 40px;
+font-weight: 800;
+}
+
+
+#caquiona{
+    width: 500px;
+    box-shadow: 0px 10px 20px rgba(56, 25, 25, 0.4);
+}
+
+
+/*flechas*/
+
+#flecha{
+    float: right;
+    width: 200px;
+    margin-bottom: 100px;
+    margin-top: 0px;
+
+}
+#flecha1{
+    float: left;
+    width: 200px;
+    margin-bottom: 100px;
+    margin-top: 0px;
+
+}
+
+

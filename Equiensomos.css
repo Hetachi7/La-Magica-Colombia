@@ -1,0 +1,85 @@
+body{
+    font-family: sans-serif;
+    margin: 0;
+    background-color: black;
+}
+
+a{
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+}
+
+header{
+    display: flex;
+    justify-content: space-between;
+    height: 100px;
+    background-color: rgb(0, 0, 0);
+    align-items: center;
+    padding: 10px;
+    margin-right: 100px;
+    margin-left: 100px;
+
+}
+.logo{
+    display: flex;
+    align-items: center;
+}
+.logo img{
+    height: 100px;
+    margin-right: 10px;
+}
+.logo h2{
+    font-size: 25px;
+}
+nav a{
+    font-weight: 600px;
+    padding-right: 20px;
+    font-size: 25px;
+}
+nav a:hover{
+    color: rgb(236, 30, 30);
+}
+
+.texto{
+    width: 1000px;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    color: white;
+}
+.texto img{
+    width: 300px;
+    height: 300px;
+    
+}
+.texto h2{
+    font-size: 30px;
+}
+.texto h1{
+    font-size: 40px;
+}
+.pregunta img{
+    position: relative;
+    width: 1000px;
+    height: 300px;
+}
+/*fondo*/
+.fonhis1 img{
+    position: absolute;
+    float: left;
+    width: 300px;
+    height: 4000;
+}
+.fonhis2 img{
+    position: relative;
+    float: right;
+    width: 300px;
+    height: 4000;
+}
+.logotext{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
